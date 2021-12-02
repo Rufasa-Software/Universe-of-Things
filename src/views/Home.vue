@@ -1,30 +1,32 @@
 <template>
-  <header-main />.
-  <v-card class="mx-auto" max-width="200">
-    <v-container fluid>
-      <v-row>
-        <v-col v-for="card in cards" :key="card.tittle" :cols="flex">
-          <v-card>
-            <v-img
-              :src="card.src"
-              class="yellow--text align-end"
-              gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
-            >
-              <v-card-title v-text="card.title"></v-card-title>
-            </v-img>
+  <div>
+    <header-main />
+    <v-card class="mx-auto" max-width="200">
+      <v-container fluid>
+        <v-row>
+          <v-col v-for="card in cards" :key="card.tittle" :cols="flex">
+            <v-card>
+              <v-img
+                :src="card.src"
+                class="yellow--text align-end"
+                gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
+              >
+                <v-card-title v-text="card.title"></v-card-title>
+              </v-img>
 
-            <v-card-actions>
-              <v-spacer></v-spacer>
+              <v-card-actions>
+                <v-spacer></v-spacer>
 
-              <v-btn icon>
-                <v-icon>mdi-heart</v-icon>
-              </v-btn>
-            </v-card-actions>
-          </v-card>
-        </v-col>
-      </v-row>
-    </v-container>
-  </v-card>
+                <v-btn icon>
+                  <v-icon>mdi-heart</v-icon>
+                </v-btn>
+              </v-card-actions>
+            </v-card>
+          </v-col>
+        </v-row>
+      </v-container>
+    </v-card>
+  </div>
 </template>
 <script>
 import HeaderMain from "../components/HeaderMain";
