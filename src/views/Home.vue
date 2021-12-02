@@ -2,14 +2,14 @@
   <v-card class="mx-auto" max-width="240" max-height="0">
     <v-container>
       <v-row>
-        <v-col v-for="card in cards" :key="card.tittle" :cols="6" :md="6">
+        <v-col v-for="card in cards" :key="card.title" :cols="6" :md="6">
           <v-card>
             <v-img
               :src="card.src"
               class="yellow--text align-end"
               gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
             >
-              <v-card-title>{{ planets.name }}</v-card-title>
+              <v-card-title v-text="card.title"></v-card-title>
             </v-img>
 
             <v-card-actions>
@@ -74,33 +74,11 @@ export default {
         flex: 12,
       },
     ],
-    cards2: [
-      {
-        title: "5",
-        src: require("../assets/poder-darth-vader-960x720.jpg"),
-        flex: 12,
-      },
-      {
-        title: "5",
-        src: require("../assets/poder-darth-vader-960x720.jpg"),
-        flex: 12,
-      },
-      {
-        title: "5",
-        src: require("../assets/poder-darth-vader-960x720.jpg"),
-        flex: 12,
-      },
-      {
-        title: "5",
-        src: require("../assets/poder-darth-vader-960x720.jpg"),
-        flex: 12,
-      },
-    ],
   }),
   name: "Home",
 
   methods: {},
-  beforeMount: async function () {
+  beforeMounted: async function () {
     let api = await new Api();
     this.items = await api.getApi();
     console.log(this.items);
