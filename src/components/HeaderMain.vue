@@ -7,11 +7,7 @@
       scroll-target="#scrolling-techniques-3"
     >
       <template>
-        <v-img
-          src="./../assets/logo.png"
-          max-width="100px"
-          position="center"
-        ></v-img>
+        <v-img src="./../assets/logo.png" max-width="100px" id="logo"></v-img>
       </template>
       <v-spacer></v-spacer>
       <template v-slot:extension>
@@ -44,5 +40,13 @@ export default {
 <style lang="scss" scoped>
 .active {
   color: #f6c646 !important;
+}
+#logo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
 }
 </style>
