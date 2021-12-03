@@ -1,15 +1,16 @@
 <template>
-  <div>
+  <div style="width: 80%; margin: 0 auto">
     <header-main />
-    <v-card class="mx-auto" max-width="200">
-      <v-container fluid style="margin: 20px 0">
-        <v-row>
-          <v-col v-for="card in cards" :key="card.tittle" :cols="flex">
+    <v-card class="mx-auto" max-width="1200">
+      <v-container fluid style="width: 100%; background: transparent">
+        <v-row dense>
+          <v-col v-for="card in cards" :key="card.tittle" :cols="card.flex">
             <v-card>
               <v-img
                 :src="card.src"
                 class="yellow--text align-end"
                 gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
+                height="200"
               >
                 <v-card-title v-text="card.title"></v-card-title>
               </v-img>
@@ -38,42 +39,37 @@ export default {
       {
         title: "1",
         src: require("@/assets/poder-darth-vader-960x720.jpg"),
-        flex: 12,
+        flex: 3,
       },
       {
-        title: "2",
+        title: "3",
         src: require("@/assets/poder-darth-vader-960x720.jpg"),
-        flex: 12,
+        flex: 3,
       },
       {
         title: "3",
         src: require("@/assets/WhatsApp Image 2021-11-23 at 21.16.49.jpeg"),
-        flex: 12,
+        flex: 3,
       },
       {
         title: "4",
         src: require("@/assets/poder-darth-vader-960x720.jpg"),
-        flex: 12,
+        flex: 3,
       },
       {
-        title: "5",
-        src: require("../assets/poder-darth-vader-960x720.jpg"),
-        flex: 12,
+        title: "4",
+        src: require("@/assets/poder-darth-vader-960x720.jpg"),
+        flex: 3,
       },
       {
-        title: "5",
-        src: require("../assets/poder-darth-vader-960x720.jpg"),
-        flex: 12,
+        title: "4",
+        src: require("@/assets/poder-darth-vader-960x720.jpg"),
+        flex: 3,
       },
       {
-        title: "5",
-        src: require("../assets/poder-darth-vader-960x720.jpg"),
-        flex: 12,
-      },
-      {
-        title: "5",
-        src: require("../assets/poder-darth-vader-960x720.jpg"),
-        flex: 12,
+        title: "4",
+        src: require("@/assets/poder-darth-vader-960x720.jpg"),
+        flex: 3,
       },
     ],
   }),
