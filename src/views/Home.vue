@@ -1,8 +1,8 @@
 <template>
-  <v-card class="mx-auto" max-width="200">
-    <v-container fluid>
+  <v-card class="mx-auto" max-width="240" max-height="0">
+    <v-container>
       <v-row>
-        <v-col v-for="card in cards" :key="card.tittle" :cols="flex">
+        <v-col v-for="card in cards" :key="card.title" :cols="6" :md="6">
           <v-card>
             <v-img
               :src="card.src"
@@ -27,6 +27,8 @@
 </template>
 
 <script>
+import { Api } from "../api/Api";
+
 export default {
   data: () => ({
     items: [],
@@ -51,25 +53,23 @@ export default {
         src: require("@/assets/poder-darth-vader-960x720.jpg"),
         flex: 12,
       },
-    ],
-    cards2: [
       {
         title: "5",
         src: require("../assets/poder-darth-vader-960x720.jpg"),
         flex: 12,
       },
       {
-        title: "5",
+        title: "6",
         src: require("../assets/poder-darth-vader-960x720.jpg"),
         flex: 12,
       },
       {
-        title: "5",
+        title: "7",
         src: require("../assets/poder-darth-vader-960x720.jpg"),
         flex: 12,
       },
       {
-        title: "5",
+        title: "8",
         src: require("../assets/poder-darth-vader-960x720.jpg"),
         flex: 12,
       },
@@ -77,17 +77,12 @@ export default {
   }),
   name: "Home",
 
-  methods: {
-    getApi() {
-      return fetch("https://swapi.dev/api/planets")
-        .then((res) => res.json())
-        .then((data) => {
-          this.items = data;
-          console.log(this.items);
-        });
-    },
+  methods: {},
+  beforeMounted: async function () {
+    let api = await new Api();
+    this.items = await api.getApi();
+    console.log(this.items);
   },
-
   components: {},
 };
 </script>
