@@ -83,5 +83,6 @@ export default {
     this.items = await api.getApi();
     console.log(this.items);
   },
-  components: {},};
+  components: {},
+};
 </script>
