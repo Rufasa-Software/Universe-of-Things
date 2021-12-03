@@ -4,7 +4,7 @@
     <v-card class="mx-auto" max-width="1200" max-height="0">
       <v-container fluid style="width: 100%; margin: 25px 0">
         <v-row dense>
-          <v-col v-for="card in cards" :key="card.tittle" :cols="card.flex">
+          <v-col v-for="card in cards" :key="card.title" :cols="card.flex">
             <v-card style="width: 175px; margin-bottom: 10px">
               <v-img
                 :src="card.src"
