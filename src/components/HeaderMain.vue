@@ -31,6 +31,7 @@ export default {
 .active {
   color: #f6c646 !important;
 }
+
 #logo {
   position: absolute;
   top: 0;
