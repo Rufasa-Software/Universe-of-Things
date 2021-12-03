@@ -1,16 +1,16 @@
 <template>
-  <div style="width: 80%; margin: 0 auto">
+  <div>
     <header-main />
-    <v-card class="mx-auto" max-width="1200">
-      <v-container fluid style="width: 100%; background: transparent">
+    <v-card class="mx-auto" max-width="1200" max-height="0">
+      <v-container fluid style="width: 100%; margin: 25px 0">
         <v-row dense>
           <v-col v-for="card in cards" :key="card.tittle" :cols="card.flex">
-            <v-card>
+            <v-card style="width: 175px; margin-bottom: 10px">
               <v-img
                 :src="card.src"
                 class="yellow--text align-end"
                 gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
-                height="200"
+                height="150"
               >
                 <v-card-title v-text="card.title"></v-card-title>
               </v-img>
