@@ -5,7 +5,6 @@
         background-image: url('https://wallpaperaccess.com/full/2217435.jpg');
       "
     >
-      >
       <router-view />
     </v-main>
 

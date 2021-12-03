@@ -1,11 +1,6 @@
 <template>
-  <v-card class="overflow-hidden">
-    <v-app-bar
-      absolute
-      color="#001029"
-      dark
-      scroll-target="#scrolling-techniques-3"
-    >
+  <v-card class="overflow-hidden" style="height: 30%">
+    <v-app-bar absolute color="#001029" dark>
       <template>
         <v-img src="./../assets/logo.png" max-width="100px" id="logo"></v-img>
       </template>
@@ -21,13 +16,8 @@
         </v-tabs>
       </template>
     </v-app-bar>
-    <v-sheet
-      id="scrolling-techniques-3"
-      class="overflow-y-auto"
-      max-height="600"
-    >
-      <v-container style="height: 1000px"></v-container>
-    </v-sheet>
+
+    <v-container class="header_app" style="height: 111px"></v-container>
   </v-card>
 </template>
 
@@ -48,5 +38,10 @@ export default {
   right: 0;
   bottom: 0;
   margin: auto;
+}
+@media (max-width: 756px) {
+  .header_app {
+    height: 103px !important;
+  }
 }
 </style>

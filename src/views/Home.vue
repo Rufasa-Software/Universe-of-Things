@@ -2,7 +2,7 @@
   <div>
     <header-main />
     <v-card class="mx-auto" max-width="200">
-      <v-container fluid>
+      <v-container fluid style="margin: 20px 0">
         <v-row>
           <v-col v-for="card in cards" :key="card.tittle" :cols="flex">
             <v-card>
@@ -55,8 +55,6 @@ export default {
         src: require("@/assets/poder-darth-vader-960x720.jpg"),
         flex: 12,
       },
-    ],
-    cards2: [
       {
         title: "5",
         src: require("../assets/poder-darth-vader-960x720.jpg"),
@@ -94,14 +92,6 @@ export default {
           console.log(this.items);
         });
     },
-    /*created() {
-      fetch("https://swapi.co/api/films")
-        .then((res) => res.json())
-        .then(
-          (data) => console.log(data)
-          /*console.log((this.films = res.results));
-        );
-    },*/
   },
 };
 </script>
