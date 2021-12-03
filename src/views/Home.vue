@@ -48,21 +48,6 @@ export default {
         flex: 3,
       },
       {
-        title: "3",
-        src: require("@/assets/WhatsApp Image 2021-11-23 at 21.16.49.jpeg"),
-        flex: 3,
-      },
-      {
-        title: "4",
-        src: require("@/assets/poder-darth-vader-960x720.jpg"),
-        flex: 3,
-      },
-      {
-        title: "4",
-        src: require("@/assets/poder-darth-vader-960x720.jpg"),
-        flex: 3,
-      },
-      {
         title: "4",
         src: require("@/assets/poder-darth-vader-960x720.jpg"),
         flex: 3,
