@@ -30,7 +30,8 @@
   </div>
 </template>
 <script>
-import HeaderMain from "../components/HeaderMain";
+import { Api } from "../api/Api";
+import HeaderMain from "../../src/components/HeaderMain.vue";
 
 export default {
   data: () => ({
@@ -71,23 +72,38 @@ export default {
         src: require("@/assets/poder-darth-vader-960x720.jpg"),
         flex: 3,
       },
+      {
+        title: "5",
+        src: require("../assets/poder-darth-vader-960x720.jpg"),
+        flex: 3,
+      },
+      {
+        title: "6",
+        src: require("../assets/poder-darth-vader-960x720.jpg"),
+        flex: 3,
+      },
+      {
+        title: "7",
+        src: require("../assets/poder-darth-vader-960x720.jpg"),
+        flex: 3,
+      },
+      {
+        title: "8",
+        src: require("../assets/poder-darth-vader-960x720.jpg"),
+        flex: 3,
+      },
     ],
   }),
   name: "Home",
 
+  methods: {},
+  beforeMounted: async function () {
+    let api = await new Api();
+    this.items = await api.getApi();
+    console.log(this.items);
+  },
   components: {
     HeaderMain,
-  },
-
-  methods: {
-    getApi() {
-      return fetch("https://swapi.dev/api/planets")
-        .then((res) => res.json())
-        .then((data) => {
-          this.items = data;
-          console.log(this.items);
-        });
-    },
   },
 };
 </script>
