@@ -19,6 +19,7 @@ import Card from "../components/Card.vue";
 export default {
   name: "CardsSection",
   data: () => ({
+    homeItems: [],
     items: [],
     images: [
       {
@@ -93,11 +94,28 @@ export default {
     ],*/
   }),
   created: async function () {
+    let response = await fetch(this.api[(0, 1, 2, 3)]);
+    let data = await response.json();
+    this.items = data.results;
+    console.log(this.items);
+  },
+
+  /*async function fetch1:() {
     let response = await fetch(this.api[1]);
     let data = await response.json();
     this.items = data.results;
   },
+  async function() {
+    let response = await fetch(this.api[2]);
+    let data = await response.json();
+    this.items = data.results;
+  },
 
+  async function() {
+    let response = await fetch(this.api[3]);
+    let data = await response.json();
+    this.items = data.results;
+  },*/
   components: {
     Card,
   },
