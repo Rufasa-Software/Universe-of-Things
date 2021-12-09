@@ -1,5 +1,5 @@
 <template lang="es">
-    <v-container class="mx-auto" max-height="0" >
+    <v-container class="mx-auto">
       <v-row>
          <v-col v-for="(card,index) in items"  v:cols="6"
             sm="4"
@@ -69,28 +69,6 @@ export default {
       "https://swapi.dev/api/starships",
       "https://swapi.dev/api/species",
     ],
-    /*cards: [
-      {
-        title: "1",
-        src: require("@/assets/poder-darth-vader-960x720.jpg"),
-        flex: 3,
-      },
-      {
-        title: "1",
-        src: require("@/assets/poder-darth-vader-960x720.jpg"),
-        flex: 3,
-      },
-      {
-        title: "1",
-        src: require("@/assets/poder-darth-vader-960x720.jpg"),
-        flex: 3,
-      },
-      {
-        title: "1",
-        src: require("@/assets/poder-darth-vader-960x720.jpg"),
-        flex: 3,
-      },
-    ],*/
   }),
   created: async function () {
     let response = await fetch(this.api[1]);

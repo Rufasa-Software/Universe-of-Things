@@ -6,6 +6,7 @@
         background-image: url('https://wallpaperaccess.com/full/2217435.jpg');
       "
     >
+      <router-view />
     </v-main>
 
     <v-footer dark padless>
@@ -19,7 +20,7 @@
 </template>
 
 <script>
-import HeaderMain from "../../src/components/HeaderMain.vue";
+import HeaderMain from "../src/components/HeaderMain.vue";
 export default {
   name: "App",
 
@@ -33,6 +34,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+#main-app {
+  margin-top: 0px;
+  border: 1px solid red !important;
+}
 .copyright {
   color: #f6c646 !important;
 }
