@@ -1,5 +1,5 @@
 <template lang="es">
-    <v-container class="mx-auto" max-height="0" >
+    <v-container class="mx-auto">
       <v-row>
          <v-col v-for="(card,index) in homeItems"  v:cols="6"
             sm="4"
