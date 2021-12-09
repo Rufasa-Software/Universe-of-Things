@@ -33,10 +33,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-#main-app {
-  margin-top: 0px;
-  border: 1px solid red !important;
-}
 .copyright {
   color: #f6c646 !important;
 }

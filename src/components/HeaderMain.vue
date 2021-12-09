@@ -10,11 +10,7 @@
         <v-tab><router-link to="/personas">PERSONAS </router-link></v-tab>
         <v-tab><router-link to="/especies">ESPECIES</router-link></v-tab>
         <v-tab><router-link to="/planetas">PLANETAS</router-link></v-tab>
-        <v-tab
-          ><router-link to="naves espaciales"
-            >NAVES ESPACIALES</router-link
-          ></v-tab
-        >
+        <v-tab><router-link to="naves">NAVES ESPACIALES</router-link></v-tab>
         <v-tab><router-link to="/favoritos">MIS FAVORITOS</router-link></v-tab>
       </v-tabs>
     </template>
