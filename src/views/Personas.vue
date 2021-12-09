@@ -6,7 +6,7 @@ import CardsSection from "../components/CardsSection.vue";
 export default {
   name: "Personas",
   data: () => ({
-    items: [],
+    homeItems: [],
   }),
 
   components: {

@@ -1,7 +1,8 @@
 <template lang="es">
     <v-container class="mx-auto">
       <v-row>
-         <v-col v-for="(card,index) in homeItems"  v:cols="6"
+         <v-col v-for="(card,index) in homeItems"  v:cols="6" 
+            xs="6"
             sm="4"
             md="3"
             lg="3"
