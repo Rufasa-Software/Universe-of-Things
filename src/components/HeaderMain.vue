@@ -7,14 +7,15 @@
       <v-spacer></v-spacer>
       <template v-slot:extension>
         <v-tabs active active-class="active" slider-color="#f6c646">
-          <v-tab>HOME</v-tab>
-          <v-tab>PERSONAS</v-tab>
+          <v-tab> <router-link to="/">HOME</router-link></v-tab>
+          <v-tab><router-link to="/personas">PERSONAS </router-link></v-tab>
           <v-tab>ESPECIES</v-tab>
           <v-tab>PLANETAS</v-tab>
           <v-tab>NAVES ESPACIALES</v-tab>
           <v-tab>MIS FAVORITOS</v-tab>
         </v-tabs>
       </template>
+      <router-view />
     </v-app-bar>
 
     <v-container class="header_app" style="height: 111px"></v-container>
