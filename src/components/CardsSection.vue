@@ -1,7 +1,7 @@
 <template lang="es">
     <v-container class="mx-auto" max-height="0" >
       <v-row>
-         <v-col v-for="(card,index) in items" v-key="index" v:cols="6"
+         <v-col v-for="(card,index) in items"  v:cols="6"
             sm="4"
             md="3"
             lg="3"
@@ -62,7 +62,12 @@ export default {
       },
     ],
 
-    api: "https://swapi.dev/api/planets",
+    api: [
+      "https://swapi.dev/api/planets",
+      "https://swapi.dev/api/people",
+      "https://swapi.dev/api/starships",
+      "https://swapi.dev/api/species",
+    ],
     /*cards: [
       {
         title: "1",
@@ -87,10 +92,11 @@ export default {
     ],*/
   }),
   created: async function () {
-    let response = await fetch(this.api);
+    let response = await fetch(this.api[1]);
     let data = await response.json();
     this.items = data.results;
   },
+
   components: {
     Card,
   },
