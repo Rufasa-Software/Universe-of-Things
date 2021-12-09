@@ -84,6 +84,7 @@ export default {
         this.homeItems.push(element);
       });
     },
+
     async getSpecies() {
       let response = await fetch(this.api[3]);
       let data = await response.json();
