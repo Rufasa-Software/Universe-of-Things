@@ -1,11 +1,11 @@
 <template>
   <v-app>
+    <header-main />
     <v-main
       style="
         background-image: url('https://wallpaperaccess.com/full/2217435.jpg');
       "
     >
-      <router-view />
     </v-main>
 
     <v-footer dark padless>
@@ -19,12 +19,16 @@
 </template>
 
 <script>
+import HeaderMain from "../../src/components/HeaderMain.vue";
 export default {
   name: "App",
 
   data: () => ({
     //
   }),
+  components: {
+    HeaderMain,
+  },
 };
 </script>
 
