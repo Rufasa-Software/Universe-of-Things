@@ -1,7 +1,7 @@
 <template lang="es">
     <v-container class="mx-auto" max-height="0" >
       <v-row>
-         <v-col v-for="(card,index) in Items1"  v:cols="6"
+         <v-col v-for="(card,index) in homeItems"  v:cols="6"
             sm="4"
             md="3"
             lg="3"
@@ -13,57 +13,37 @@
 </template>
 
 <script>
-// import Api from "../api/Api.js";
 import Card from "../components/Card.vue";
 
 export default {
   name: "CardsSection",
   data: () => ({
     homeItems: [],
-    Items1: [],
-    Items2: [],
-    Items3: [],
-    items: [],
+
     images: [
       {
-        url: "https://www.cinemascomics.com/wp-content/uploads/2020/06/poder-darth-vader.jpg",
-        ide: 0,
+        url: "https://th.bing.com/th/id/R.c8a34c1db6195dff559f58642de81047?rik=HSqRL0PpVdkG1g&pid=ImgRaw&r=0",
       },
       {
-        url: "https://sm.ign.com/t/ign_latam/screenshot/default/vader-palpatine_5gyy.1200.jpg",
-        ide: 1,
+        url: "https://th.bing.com/th/id/R.0ece0ea07c6ec6e127fa6c88053cc5fa?rik=MJOBSc2a%2b0p%2byQ&pid=ImgRaw&r=0",
       },
       {
-        url: "https://www.cinemascomics.com/wp-content/uploads/2020/06/poder-darth-vader.jpg",
-        ide: 2,
+        url: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Triple-star_sunset.jpg/250px-Triple-star_sunset.jpg",
       },
       {
-        url: "https://sm.ign.com/t/ign_latam/screenshot/default/vader-palpatine_5gyy.1200.jpg",
-        ide: 3,
+        url: "https://upload.wikimedia.org/wikipedia/commons/5/56/Alderaan.JPG",
       },
       {
         url: "https://www.cinemascomics.com/wp-content/uploads/2020/06/poder-darth-vader.jpg",
-        ide: 4,
       },
       {
-        url: "https://sm.ign.com/t/ign_latam/screenshot/default/vader-palpatine_5gyy.1200.jpg",
-        ide: 5,
+        url: "https://e.rpp-noticias.io/normal/2020/05/03/111311_936382.jpg",
       },
       {
-        url: "https://www.cinemascomics.com/wp-content/uploads/2020/06/poder-darth-vader.jpg",
-        ide: 6,
+        url: "https://mewmagazine.es/wp-content/uploads/2019/12/Luke-Skywalker.jpg",
       },
       {
-        url: "https://sm.ign.com/t/ign_latam/screenshot/default/vader-palpatine_5gyy.1200.jpg",
-        ide: 7,
-      },
-      {
-        url: "https://www.cinemascomics.com/wp-content/uploads/2020/06/poder-darth-vader.jpg",
-        ide: 8,
-      },
-      {
-        url: "https://sm.ign.com/t/ign_latam/screenshot/default/vader-palpatine_5gyy.1200.jpg",
-        ide: 9,
+        url: "https://i0.wp.com/hipertextual.com/wp-content/uploads/2020/12/star_wars_el_imperio_contraataca_irvin_kershner.jpg?fit=1200%2C800&ssl=1",
       },
     ],
 
@@ -75,49 +55,51 @@ export default {
     ],
   }),
 
-  created: async function () {
-    {
+  methods: {
+    async getPlanets() {
       let response = await fetch(this.api[0]);
       let data = await response.json();
-      this.items = data.results;
-    }
-    {
+      let dataArray = data.results.slice(0, 2);
+      console.log(dataArray);
+      dataArray.forEach((element) => {
+        this.homeItems.push(element);
+      });
+    },
+    async getPeople() {
       let response = await fetch(this.api[1]);
       let data = await response.json();
-      this.Items1 = data.results;
-    }
-    {
+      let dataArray = data.results.slice(0, 2);
+      console.log(dataArray);
+      dataArray.forEach((element) => {
+        this.homeItems.push(element);
+      });
+    },
+
+    async getStarships() {
       let response = await fetch(this.api[2]);
       let data = await response.json();
-      this.Items2 = data.results;
-    }
-    {
+      let dataArray = data.results.slice(0, 2);
+      console.log(dataArray);
+      dataArray.forEach((element) => {
+        this.homeItems.push(element);
+      });
+    },
+    async getSpecies() {
       let response = await fetch(this.api[3]);
       let data = await response.json();
-      this.Items3 = data.results;
-    }
+      let dataArray = data.results.slice(0, 2);
+      console.log(dataArray);
+      dataArray.forEach((element) => {
+        this.homeItems.push(element);
+      });
+    },
   },
-  /*const: function cogerDatos(homeItems, items) {
-    homeItems.push(items);
-    console.log(homeItems);
+  created: async function () {
+    this.getStarships();
+    this.getPlanets();
+    this.getPeople();
+    this.getSpecies();
   },
-
-  /*async function fetch1:() {
-    let response = await fetch(this.api[1]);
-    let data = await response.json();
-    this.items = data.results;
-  },
-  async function() {
-    let response = await fetch(this.api[2]);
-    let data = await response.json();
-    this.items = data.results;
-  },
-
-  async function() {
-    let response = await fetch(this.api[3]);
-    let data = await response.json();
-    this.items = data.results;
-  },*/
 
   components: {
     Card,

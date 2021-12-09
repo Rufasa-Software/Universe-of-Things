@@ -3,7 +3,9 @@
     <v-img
       :src="src"
       class="yellow--text align-end"
-      gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)">
+      gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
+      height="13em"
+     >
       <v-card-title>{{card.name}}</v-card-title>
     </v-img>
     <v-card-actions>
