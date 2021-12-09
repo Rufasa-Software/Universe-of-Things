@@ -1,7 +1,7 @@
 <template lang="es">
     <v-container class="mx-auto" max-height="0" >
       <v-row>
-         <v-col v-for="(card,index) in items"  v:cols="6"
+         <v-col v-for="(card,index) in Items1"  v:cols="6"
             sm="4"
             md="3"
             lg="3"
@@ -20,6 +20,9 @@ export default {
   name: "CardsSection",
   data: () => ({
     homeItems: [],
+    Items1: [],
+    Items2: [],
+    Items3: [],
     items: [],
     images: [
       {
@@ -70,34 +73,33 @@ export default {
       "https://swapi.dev/api/starships",
       "https://swapi.dev/api/species",
     ],
-    /*cards: [
-      {
-        title: "1",
-        src: require("@/assets/poder-darth-vader-960x720.jpg"),
-        flex: 3,
-      },
-      {
-        title: "1",
-        src: require("@/assets/poder-darth-vader-960x720.jpg"),
-        flex: 3,
-      },
-      {
-        title: "1",
-        src: require("@/assets/poder-darth-vader-960x720.jpg"),
-        flex: 3,
-      },
-      {
-        title: "1",
-        src: require("@/assets/poder-darth-vader-960x720.jpg"),
-        flex: 3,
-      },
-    ],*/
   }),
+
   created: async function () {
-    let response = await fetch(this.api[(0, 1, 2, 3)]);
-    let data = await response.json();
-    this.items = data.results;
-    console.log(this.items);
+    {
+      let response = await fetch(this.api[0]);
+      let data = await response.json();
+      this.items = data.results;
+    }
+    {
+      let response = await fetch(this.api[1]);
+      let data = await response.json();
+      this.Items1 = data.results;
+    }
+    {
+      let response = await fetch(this.api[2]);
+      let data = await response.json();
+      this.Items2 = data.results;
+    }
+    {
+      let response = await fetch(this.api[3]);
+      let data = await response.json();
+      this.Items3 = data.results;
+    }
+  },
+  /*const: function cogerDatos(homeItems, items) {
+    homeItems.push(items);
+    console.log(homeItems);
   },
 
   /*async function fetch1:() {
@@ -116,6 +118,7 @@ export default {
     let data = await response.json();
     this.items = data.results;
   },*/
+
   components: {
     Card,
   },
